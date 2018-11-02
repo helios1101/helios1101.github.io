@@ -108,6 +108,11 @@
       if (response && !response.error) {
         console.log('Aagaya sara posts ID');
         console.log(response);
+        var id = response.data["1"].id;
+        var object = id.split("_");
+        var number = object["1"];
+        var dalo = object["0"];
+        document.getElementById("1").src = `https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F${dalo}%2Fposts%2F${number}%2F&width=500&show_text=true&appId=1558677080898434&height=274";
       }
       else{
         console.log('Cannot load posts');
@@ -125,7 +130,7 @@
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-<iframe id="1" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F567643777000283%2Fposts%2F563299337434727%2F&width=500&show_text=true&appId=1558677080898434&height=274" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<iframe id="1" src="" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 <iframe id="2" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F567643777000283%2Fposts%2F563299337434727%2F&width=500&show_text=true&appId=1558677080898434&height=274" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 <iframe id="3" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F567643777000283%2Fposts%2F563299337434727%2F&width=500&show_text=true&appId=1558677080898434&height=274" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 <iframe id="4" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F567643777000283%2Fposts%2F563299337434727%2F&width=500&show_text=true&appId=1558677080898434&height=274" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
