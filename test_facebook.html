@@ -18,18 +18,18 @@
     console.log(response.authResponse.accessToken);
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-//       var res = response.authResponse.accessToken;
-//       var o;
-//       console.log(res);
-//       function reqListener () {
-//           o=JSON.parse(this.responseText);
-//               console.log(o);
-//       }
+      var res = response.authResponse.accessToken;
+      var o;
+      console.log(res);
+      function reqListener () {
+          o=JSON.parse(this.responseText);
+              console.log(o);
+      }
 
-// var oReq = new XMLHttpRequest();
-// oReq.addEventListener("load", reqListener);
-// oReq.open("GET", `https://graph.facebook.com/${res}/feed`);
-// oReq.send();
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", `https://graph.facebook.com/${response.authResponse.accessToken}/feed`);
+oReq.send();
       
       console.log('2nd point');
       testAPI();
