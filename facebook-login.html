@@ -12,6 +12,9 @@
     <div id="fb-root"></div>
     <div class="fb-login-button" data-max-rows="2" data-size="large" data-button-type="login_with" data-show-faces="true"
         data-auto-logout-link="true" data-use-continue-as="true"></div>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">hELLO
+    </fb:login-button>
+
     <script>(function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -21,24 +24,47 @@
         }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
     <script>
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '{1558677080898434}',
                 cookie: true,
                 xfbml: true,
-                version: '{api-version}'
+                version: '{1.0.1}'
             });
 
             FB.AppEvents.logPageView();
 
         };
 
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
 
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
 
+        FB.api(
+            "/page-id/feed",
+            function (response) {
+                if (response && !response.error) {
+                    /* handle the result */
+                    console.log("qwerty");
+                }
+                else {
+                    console.log("qwe");
+                }
+            }
+        );
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                var accessToken = response.authResponse.accessToken;
+            }
+        });
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
