@@ -14,10 +14,12 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
+    console.log(response.authResponse.accessToken);
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       var res = response.authResponse.accessToken;
       var o;
+      console.log(res);
       function reqListener () {
           o=JSON.parse(this.responseText);
               console.log(o);
