@@ -102,6 +102,15 @@ oReq.send();
       console.log('4th point');
       
     });
+    FB.api(
+    "/me/feed",
+    function (response) {
+      if (response && !response.error) {
+        console.log('Aagatya');
+        console.log(response);
+      }
+    }
+);
   }
 </script>
 
