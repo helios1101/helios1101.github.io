@@ -14,23 +14,24 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
+    console.log('1st point');
     console.log(response.authResponse.accessToken);
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      var res = response.authResponse.accessToken;
-      var o;
-      console.log(res);
-      function reqListener () {
-          o=JSON.parse(this.responseText);
-              console.log(o);
-      }
+//       var res = response.authResponse.accessToken;
+//       var o;
+//       console.log(res);
+//       function reqListener () {
+//           o=JSON.parse(this.responseText);
+//               console.log(o);
+//       }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", `https://graph.facebook.com/${res}/feed`);
-oReq.send();
+// var oReq = new XMLHttpRequest();
+// oReq.addEventListener("load", reqListener);
+// oReq.open("GET", `https://graph.facebook.com/${res}/feed`);
+// oReq.send();
       
-      
+      console.log('2nd point');
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
@@ -93,6 +94,9 @@ oReq.send();
       
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+      console.log('3rd point');
+      console.log(response);
+      console.log('4th point');
       
     });
   }
