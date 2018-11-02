@@ -108,10 +108,14 @@
       if (response && !response.error) {
         console.log('Aagaya sara posts ID');
         console.log(response);
-        var id = response.data["1"].id;
+        var id = response.data["2"].id;
+        console.log(id);
         var object = id.split("_");
+        console.log(object);
         var number = object["1"];
+        console.log(number);
         var dalo = object["0"];
+        console.log(dalo);
         document.getElementById("1").src = `https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F${dalo}%2Fposts%2F${number}%2F&width=500&show_text=true&appId=1558677080898434&height=274";
       }
       else{
