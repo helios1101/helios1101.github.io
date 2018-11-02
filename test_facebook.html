@@ -22,17 +22,17 @@
       var res = response.authResponse.accessToken;
       var o;
 //       console.log(res);
-      function reqListener () {
-          o=JSON.parse(this.responseText);
-              console.log(o);
-        console.log('1 3 3 st point');
-      }
-console.log('1 2 st point');
+//       function reqListener () {
+//           o=JSON.parse(this.responseText);
+//               console.log(o);
+//         console.log('1 3 3 st point');
+//       }
+// console.log('1 2 st point');
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", `https://graph.facebook.com/${response.authResponse.accessToken}/feed`);
-oReq.send();
+// var oReq = new XMLHttpRequest();
+// oReq.addEventListener("load", reqListener);
+// oReq.open("GET", `https://graph.facebook.com/${response.authResponse.accessToken}/feed`);
+// oReq.send();
       
       console.log('2nd point');
       testAPI();
@@ -106,7 +106,7 @@ oReq.send();
     "/me/feed",
     function (response) {
       if (response && !response.error) {
-        console.log('Aagatya');
+        console.log('Aagaya sara posts ID');
         console.log(response);
       }
     }
