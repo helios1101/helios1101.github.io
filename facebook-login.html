@@ -84,13 +84,11 @@
     }(document, 'script', 'facebook-jssdk'));
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI(res) {
+    function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
       var x = document.getElementById("myDIV");
       if (x.style.display === "none") {
         x.style.display = "block";
-      } else {
-        x.style.display = "none";
       }
       FB.api('/me', function (response) {
         console.log('Successful login for: ' + response.name);
